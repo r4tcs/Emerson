@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-sm navbar-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="font-size: large; color: rgba(172, 172, 172, 0.712);">Visual Language</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="this.components">
+          <a class="nav-link dropdown-toggle" id="navbardrop1" data-toggle="dropdown"
+            style="font-size: large; color: rgba(0, 138, 218, 0.918);">
+            Components
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" style="font-size: large; color: rgba(0, 0, 0, 0.712);">Action</a>
+            <a class="dropdown-item" style="font-size: large; color: rgba(0, 0, 0, 0.712);">Another action</a>
+            <a class="dropdown-item" style="font-size: large; color: rgba(0, 0, 0, 0.712);">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item" *ngIf="this.components1">
+          <a class="nav-link" style="font-size: large; color: rgba(172, 172, 172, 0.712);">Components 1</a>
+        </li>
+        <li class="nav-item" *ngIf="this.components2">
+          <a class="nav-link" style="font-size: large; color: rgba(172, 172, 172, 0.712);">Components 2</a>
+        </li>
+        <li *ngIf="this.components3" class="nav-item">
+          <a class="nav-link" style="font-size: large; color: rgba(172, 172, 172, 0.712);">Components 3</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="this.showMore === true">
+          <a class="nav-link dropdown-toggle" id="navbardrop2" data-toggle="dropdown" (click)="showMoreClicked()"
+            style="font-size: large; color: rgba(0, 138, 218, 0.918);">
+            Show more
+          </a>
+          <div class="dropdown-menu" *ngIf="this.sidebar === false">
+            <a *ngFor="let item of this.showMoreItems" class="dropdown-item"
+              style="font-size: large; color: rgba(0, 0, 0, 0.712);">{{item}}</a>
+        <li *ngIf="this.componentsShowMore === true" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="font-size: large; color: rgba(0, 138, 218, 0.918);">Components</a>
+          <a class="dropdown-item" style="text-align: left; font-size: large; color: rgba(0, 0, 0, 0.712);">Action</a>
+          <a class="dropdown-item" style="text-align: left; font-size: large; color: rgba(0, 0, 0, 0.712);">Another
+            action</a>
+          <a class="dropdown-item" style="text-align: left; font-size: large; color: rgba(0, 0, 0, 0.712);">Something
+            else here</a>
+        </li>
+    </div>
+    </li>
+    </ul>
+</div>
+</nav>
+<div class="sidebar" [@slideInOut] *ngIf="this.sidebar === true && this.showMoreClick === true">
+  <div class="row h-100">
+    <div class="col-2">
+      <li class="nav-item dropdown">
+        <a *ngFor="let item of this.sidebarItems.slice(0,7)" class="dropdown-item"
+          style="text-align: left; font-size: large; color: rgba(0, 0, 0, 0.712);">{{item}}</a>
+      </li>
+    </div>
+  </div>
+</div>
